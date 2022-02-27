@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+</head>
+<style>
+*{  
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color:white;
+    
+}
+
+/* main screen*/
+.container{
+    height: 100vh;
+    width: 100%;
+    background:url(static/head3.jpg);
+    background-size: cover;
+    background-position: centre;
+    position: relative;
+    color:white;
+
+}
+
+/*buttons */
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 1.2rem;
+    position: relative;
+    margin: 15px;
+}
+
+.btn-1{
+    overflow: hidden;
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;    
+        
+}
+
+.btn-1::after{
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-color: deeppink;
+    background-image: linear-gradient(225deg, #27d86c 0%, #26caf8 50%, #c625d0 100%);
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+
+
+.btn-1:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.5), 10px -10px 25px 0 rgba(39, 200, 255, 0.5);
+}
+
+.btn-1:hover::after{
+    transform: rotate(150deg);
+}
+
+.navbar{
+    width: 88%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:white;
+}
+
+.logo{
+    width: 140px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+ 
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 30%;
+}
+
+.left-col{
+    margin-left: 0%;
+}
+
+.left-col h1{
+        font-size: 40px;
+        color: #00ffff;
+        line-height: 50px;
+        float: left;
+}
+
+
+</style>
+
+
+
+<body>
+    <div class="container">
+            <div class="navbar">
+                <img src="{{ url_for('static', filename='synergic.png') }}" class="logo">
+                <button type="button" class="btn btn-1">
+                    <span class="button__text">HOME</span>
+                    <span class="button__icon">     
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>                                                
+            </button>   
+            <div class="buttons">
+                <a href="{{url_for('how')}}" class = "btn btn-1">
+                    <span class="button__text">Guide</span>
+                    <span class="button__icon"><ion-icon name="list-outline"></ion-icon></span>
+                </a>
+                <a href="{{url_for('about')}}" class = "btn btn-1">
+                    <span class="button__text">About</span>
+                    <span class="button__icon"><ion-icon name="newspaper-outline"></ion-icon></span>
+                </a>
+                <a href="{{url_for('socials')}}" class = "btn btn-1">
+                    <span class="button__text">Social</span>
+                    <span class="button__icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                </a>
+                <a href="{{url_for('page2')}}" class = "btn btn-1">
+                    <span class="button__text">Converter</span>
+                    <span class="button__icon"><ion-icon name="arrow-redo-outline"></ion-icon></span>
+                </a>
+                <a href="{{url_for('login')}}" class = "btn btn-1">
+                    <span class="button__text">Subscription</span>
+                    <span class="button__icon"><ion-icon name="thumbs-up-outline"></ion-icon>
+                </a>      
+            </div>
+
+            <div class="content">
+                <div class="left-col">
+                <h1> YOUR<br>ONE-STOP<br>MEDIA<br>CONVERTER</h1>
+                </div>
+                <div class="right-col">
+            </div>
+
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
+</body>
+
+
+
+
+
+
+
+<script>
+
+</script>
+
+
+
+</html>
